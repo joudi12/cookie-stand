@@ -1,18 +1,9 @@
 
-  
-      #list  {
-     border: 1px solid black; 
-     border-collapse: collapse;
-
-
-  } 
-
-    /* td {
-     padding: 20px;
-    text-align: left;
-    overflow-x:auto; 
-     border: 1px black solid;  
-    
-  }    */
-
+table{
+   border: 2px black  solid;
+   border-collapse: collapse;
+}
+ td{
+    border:  2px black solid;
+ }
  
