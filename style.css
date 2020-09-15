@@ -2,8 +2,31 @@
 table{
    border: 2px black  solid;
    border-collapse: collapse;
+   text-align: center;
 }
  td{
     border:  2px black solid;
  }
  
+ h1{
+    text-align: center;
+    background-color: #7AB3FF;
+ }
+
+
+footer{
+   
+   background-color: #7AB3FF;
+   
+}
+a{
+   text-align: center;
+   color:  #7AB3FF;
+   border: 2px #7AB3FF solid;
+   padding: 6px;
+
+}
+ p{
+    font-size: large;
+    font-family:sans-serif;
+ }
