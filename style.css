@@ -1,0 +1,18 @@
+
+  
+      #list  {
+     border: 1px solid black; 
+     border-collapse: collapse;
+
+
+  } 
+
+    #list>td {
+     padding: 20px;
+    text-align: left;
+    overflow-x:auto; 
+     border: 1px black solid;  
+    
+  }   
+
+ 
