@@ -1,6 +1,6 @@
 'use strict';
 
-var houers = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', ' daily location Total'];
+var houers = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
 
 var Cookies = [];
 function Cookie(name, minhourly, maxhourly, averagehourly) {
@@ -9,6 +9,7 @@ function Cookie(name, minhourly, maxhourly, averagehourly) {
     this.maxhourly = maxhourly;
     this.averagehourly = averagehourly;
     this.cookiespairhour = [];
+    this.dailytotaly = 0;
     Cookies.push(this);
 }
 Cookie.prototype.getrandomcustmerhourly = function () {
@@ -22,17 +23,18 @@ Cookie.prototype.getcookiespurchasedhourly = function () {
     return cookiespurchasedhourly;
 };
 Cookie.prototype.getcookieshourly = function () {
-    var tot = 0;
+    // var  tot =0;
 
     for (var i = 0; i < houers.length; i++) {
         var x = this.getcookiespurchasedhourly();
         this.cookiespairhour.push(x);
-        tot += x;
+        //tot += x;
+        this.dailytotaly = this.dailytotaly + x;
 
 
     }
-    console.log(tot);
-    this.cookiespairhour.push(tot);
+    //console.log(tot);
+   // this.cookiespairhour.push(tot);
     // console.log(this.cookiespairhour[this.cookiespairhour.length-1]);
     //console.log('getcookieshourly ', this.cookiespairhour);
 
@@ -84,12 +86,15 @@ Cookie.prototype.render = function () {
                 } else if (j <= 16) {
 
 
+
                     td.textContent = this.cookiespairhour[j];
 
                 } else if (j < 17) {
+                    
+                
 
-                    td.textContent = this.cookiespairhour[j + 1];
-                    lastRow[j]+= this.cookiespairhour[j + 1];
+                    td.textContent = this.dailytotaly;
+                    lastRow[j]+= this.cookiespairhour[j];
                     //rowSum += pairhour;
                     //td.textContent = rowSum ;
                 }else{
@@ -108,7 +113,7 @@ Cookie.prototype.render = function () {
     
 };
 
-var seattle = new Cookie('seattle', 23, 65, 6.3);
+var seattle = new Cookie('seattle', 23, 65, 6.3, 0);
 var tokyo = new Cookie('tokyo', 3, 24, 1.2);
 var dubai = new Cookie('dubai', 11, 38, 3.7);
 var paris = new Cookie('paris', 20, 38, 2.3);
