@@ -8,6 +8,7 @@ var hourstotal = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var body = document.getElementById('list');
 var table = document.createElement('table');
 body.appendChild(table);
+// var table = document.getElementById('Table')
 
 
 function addhead() {
@@ -70,16 +71,16 @@ Cookie.prototype.getcookiespurchasedhourly = function () {
     return cookiespurchasedhourly;
 };
 Cookie.prototype.getcookieshourly = function () {
-  
+
     for (var i = 0; i < houers.length; i++) {
         var x = this.getcookiespurchasedhourly();
         this.cookiespairhour.push(x);
-        
+
         this.dailytotaly = this.dailytotaly + x;
-        hourstotal[i]+= x;
+        hourstotal[i] += x;
     }
 
-    hourstotal[hourstotal.length-1]+= this.dailytotaly;
+    hourstotal[hourstotal.length - 1] += this.dailytotaly;
     return this.cookiespairhour;
 };
 Cookie.prototype.render = function () {
@@ -114,12 +115,8 @@ var lima = new Cookie('lima ', 2, 16, 4.6);
 
 console.log(Cookies);
 
-for (var y = 0; y < Cookies.length; y++) {
-    Cookies[y].getcookiespurchasedhourly();
-    Cookies[y].getcookieshourly();
-    Cookies[y].render();
-}
-addFooter();
+
+
 
 function getRandomNumber(min, max) {
     var random = Math.random();
@@ -127,6 +124,48 @@ function getRandomNumber(min, max) {
     random = Math.floor(random);
     return random;
 }
+
+var form = document.getElementById('forms');
+form.addEventListener('submit', function (even) {
+    even.preventDefault();
+
+    var location = even.target.location.value;
+
+
+
+    var minmum = parseInt(even.target.mainmumNumber.value);
+    var maxmum = parseInt(even.target.maximumNumber.value);
+    var avarage = parseFloat(even.target.averagehourly.value);
+    var addlocation = new Cookie(location, minmum, maxmum, avarage);
+
+   
+     var rowCount = table.rows.length;
+     table.deleteRow(rowCount -1);
+   // working solution 
+    
+    addlocation.getcookiespurchasedhourly();
+   addlocation.getcookieshourly();
+    addlocation.render();
+    // for (var y = 0; y < Cookies.length; y++) {
+    //     Cookies[y].getcookiespurchasedhourly();
+    //     Cookies[y].getcookieshourly();
+    //     Cookies[y].render();
+    // }
+
+    addFooter();
+});
+
+
+for (var y = 0; y < Cookies.length; y++) {
+    Cookies[y].getcookiespurchasedhourly();
+    Cookies[y].getcookieshourly();
+    Cookies[y].render();
+}
+addFooter();
+
+
+
+
 
     // var  = document.createElement('h2');
     // h2.textContent = this.name;
