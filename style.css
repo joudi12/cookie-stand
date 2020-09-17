@@ -3,6 +3,11 @@ table{
    border: 2px black  solid;
    border-collapse: collapse;
    text-align: center;
+   margin-top: 50px;
+   margin-left: 300px;
+}
+body{
+   background-color: blanchedalmond;
 }
  td{
     border:  2px black solid;
@@ -10,23 +15,95 @@ table{
  
  h1{
     text-align: center;
-    background-color: #7AB3FF;
+    font-family: 'Zilla Slab Highlight', cursive;
+    color: brown;
+    
+ }
+ .fish{
+    display: inline-block;
+    width: 25%;
+    height: 25%;
+    margin-left: 60px;
+    
  }
 
 
-footer{
-   
-   background-color: #7AB3FF;
-   
-}
-a{
-   text-align: center;
-   color:  #7AB3FF;
-   border: 2px #7AB3FF solid;
-   padding: 6px;
 
-}
+
  p{
     font-size: large;
     font-family:sans-serif;
  }
+
+ #sale{
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgrey;
+ }
+  #p1, #p2 ,#p3 {
+   
+   font-family: 'Zilla Slab Highlight', cursive;
+   color: brown;
+   margin: 50px;
+   font-size: x-large;
+ }
+ #sales{
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: indianred;
+    color: lavenderblush;
+    padding: 20px;
+    text-decoration: none;
+
+ }
+ .family{
+    margin: auto;
+    width: 100%;
+ }
+ .shirt{
+    float: left;
+    width: 10%;
+    height: 10%;
+    margin-left: 45%;
+    margin-right: 25%;
+ }
+ #p2{
+    float: right ;
+    display: inline;
+    font-size: x-large;
+ }
+ .cook{
+    width: 25%;
+    height: 25%;
+    display: inline-block;
+    margin-left: 200px;
+
+ }
+ .ttt{
+   display: inline-block;
+   padding: 30px;
+   list-style: none;
+    margin-left: 200px; 
+   list-style-position: inside;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: indianred;
+   color: lavenderblush;
+   
+  
+ }
+ #home{
+    text-align: center;
+    margin-bottom:50px ;
+    background-color: indianred;
+    color: lavenderblush;
+    padding: 20px;
+    text-decoration: none;
+ }
+#forms{
+   margin-top: 50px;
+   text-align: center;
+}
+#boot{
+   background-color: indianred;
+   color: blanchedalmond;
+   padding: 4px;
+}
